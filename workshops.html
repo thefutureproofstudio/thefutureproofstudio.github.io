@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workshops & Institutional Training — The Futureproof Studio</title>
+<meta name="description" content="Book an AI literacy workshop for your institution. Half-day, full-day, and keynote formats for faculty, administrators, and instructional designers. From $1,500.">
+<meta property="og:title" content="AI Literacy Workshops — The Futureproof Studio">
+<meta property="og:description" content="Practical AI literacy workshops for higher education institutions. Role-specific content for every seat in the room.">
+<meta property="og:url" content="https://futureproofstudio.co/workshops.html">
+<link rel="canonical" href="https://futureproofstudio.co/workshops.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 300;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+
+  .page {
+    width: 850px;
+    background: white;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.12);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: #1a1f2e;
+    padding: 44px 52px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: '';
+    position: absolute;
+    right: -60px; top: -60px;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(13,148,136,0.08);
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+
+  .logo-mark {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .logo-icon-wrap {
+    width: 36px; height: 36px;
+    background: #134e4a;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+  }
+
+  .logo-the {
+    font-size: 7px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #475569;
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .logo-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 14px;
+    color: #f1f5f9;
+  }
+
+  .doc-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #475569;
+    text-align: right;
+    line-height: 1.6;
+  }
+
+  .header h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.4rem;
+    color: white;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    margin-bottom: 10px;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: #2dd4bf;
+  }
+
+  .header-sub {
+    font-size: 0.95rem;
+    color: #94a3b8;
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 560px;
+  }
+
+  /* ── TEAL STRIP ── */
+  .teal-strip {
+    background: #0d9488;
+    padding: 14px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.8rem;
+    color: white;
+    font-weight: 500;
+  }
+
+  .strip-dot {
+    width: 5px; height: 5px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+  }
+
+  /* ── BODY ── */
+  .body {
+    padding: 44px 52px;
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 40px;
+  }
+
+  /* ── LEFT COLUMN ── */
+  .section-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: #0d9488;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.25rem;
+    color: #1a1f2e;
+    margin-bottom: 14px;
+    line-height: 1.2;
+  }
+
+  p {
+    font-size: 0.88rem;
+    color: #3d4a5c;
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+
+  /* Formats */
+  .format-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+  }
+
+  .format-card {
+    border: 1px solid #e2e8f0;
+    padding: 14px 16px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .format-card.featured {
+    border-color: #0d9488;
+    background: #f0fdfa;
+  }
+
+  .format-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .format-title {
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: #1a1f2e;
+    margin-bottom: 3px;
+  }
+
+  .format-desc {
+    font-size: 0.8rem;
+    color: #7a8a9a;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .format-price {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #0d9488;
+    margin-top: 4px;
+  }
+
+  /* Agenda */
+  .agenda {
+    margin-top: 6px;
+  }
+
+  .agenda-item {
+    display: flex;
+    gap: 12px;
+    padding: 9px 0;
+    border-bottom: 1px solid #f1f5f9;
+    align-items: flex-start;
+  }
+
+  .agenda-item:last-child { border-bottom: none; }
+
+  .agenda-time {
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: #0d9488;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+    padding-top: 1px;
+    min-width: 52px;
+  }
+
+  .agenda-content strong {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #1a1f2e;
+    margin-bottom: 2px;
+  }
+
+  .agenda-content span {
+    font-size: 0.78rem;
+    color: #7a8a9a;
+    line-height: 1.4;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .right-col { }
+
+  /* Who attends */
+  .audience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 6px;
+  }
+
+  .audience-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    padding: 10px 12px;
+    background: #f8fafc;
+    border-left: 3px solid;
+  }
+
+  .audience-item:nth-child(1) { border-color: #0d9488; }
+  .audience-item:nth-child(2) { border-color: #d97706; }
+  .audience-item:nth-child(3) { border-color: #e05c5c; }
+  .audience-item:nth-child(4) { border-color: #6d4fc2; }
+
+  .audience-role {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #1a1f2e;
+    display: block;
+    margin-bottom: 2px;
+  }
+
+  .audience-why {
+    font-size: 0.75rem;
+    color: #7a8a9a;
+    line-height: 1.4;
+    margin: 0;
+  }
+
+  /* Outcomes */
+  .outcomes {
+    margin-top: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+  }
+
+  .outcome-item {
+    display: flex;
+    gap: 9px;
+    align-items: flex-start;
+    font-size: 0.82rem;
+    color: #3d4a5c;
+    line-height: 1.5;
+  }
+
+  .outcome-check {
+    color: #0d9488;
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  /* Differentiators */
+  .diff-box {
+    background: #1a1f2e;
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  .diff-box .section-label { color: #2dd4bf; }
+
+  .diff-item {
+    display: flex;
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    line-height: 1.5;
+    margin-bottom: 8px;
+  }
+
+  .diff-item:last-child { margin-bottom: 0; }
+  .diff-arrow { color: #2dd4bf; flex-shrink: 0; }
+
+  /* Testimonial */
+  .testimonial {
+    background: #f0fdfa;
+    border: 1px solid #ccfbf1;
+    border-left: 3px solid #0d9488;
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  .testimonial blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: #1a1f2e;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .testimonial cite {
+    font-size: 0.72rem;
+    color: #7a8a9a;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── FOOTER ── */
+  .footer {
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    padding: 20px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-contact {
+    font-size: 0.78rem;
+    color: #7a8a9a;
+    line-height: 1.6;
+  }
+
+  .footer-contact strong { color: #1a1f2e; }
+
+  .footer-cta {
+    background: #0d9488;
+    color: white;
+    padding: 10px 24px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  @media print {
+    body { background: white; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav style="position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); border-bottom:1px solid #e2e8f0; padding:0 6vw; height:64px; display:flex; align-items:center; justify-content:space-between;">
+  <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+    <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+      <circle cx="22" cy="22" r="22" fill="#f0fdfa"/>
+      <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#0d9488"/>
+      <path d="M28 15.5 L35 22 L28 28.5" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div style="display:flex; flex-direction:column; line-height:1; gap:2px;">
+      <span style="font-size:7px; letter-spacing:0.22em; text-transform:uppercase; color:#7a8a9a; font-family:'Outfit',sans-serif;">The</span>
+      <span style="font-family:'DM Serif Display',serif; font-size:15px; color:#1a1f2e;">Futureproof Studio</span>
+    </div>
+  </a>
+  <ul style="display:flex; align-items:center; gap:32px; list-style:none;">
+    <li><a href="index.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none;">Home</a></li>
+    <li><a href="course.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none;">Course</a></li>
+    <li><a href="workshops.html" style="font-size:0.85rem; color:#0d9488; font-weight:500; text-decoration:none;">Workshops</a></li>
+    <li><a href="contact.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none;">Contact</a></li>
+    <li><a href="contact.html#book" style="background:#0d9488; color:white; padding:9px 22px; font-size:0.82rem; font-weight:600; text-decoration:none;">Book a Workshop</a></li>
+  </ul>
+</nav>
+<div style="height:64px;"></div>
+
+<div style="max-width:900px; margin:40px auto; padding:0 20px;">
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="logo-mark">
+        <div class="logo-icon-wrap">
+          <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+            <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <path d="M28 15.5 L35 22 L28 28.5" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="logo-the">The</span>
+          <span class="logo-name">Futureproof Studio</span>
+        </div>
+      </div>
+      <div class="doc-label">
+        Workshop Proposal<br>
+        futureproofstudio.co
+      </div>
+    </div>
+    <h1>AI Literacy for<br><em>Higher Education</em></h1>
+    <p class="header-sub">A practical, role-specific workshop for faculty, instructional designers, administrators, and online program staff — built by a higher ed insider who speaks your language.</p>
+  </div>
+
+  <!-- TEAL STRIP -->
+  <div class="teal-strip">
+    <div class="strip-item">📍 On-site or virtual</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">⏱ Half-day or full-day</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">👥 Up to 40 participants</div>
+    <div class="strip-dot"></div>
+    <div class="strip-item">📋 All materials included</div>
+  </div>
+
+  <!-- BODY -->
+  <div class="body">
+
+    <!-- LEFT -->
+    <div class="left-col">
+
+      <div class="section-label">Workshop Formats</div>
+      <div class="format-grid">
+
+        <div class="format-card">
+          <div class="format-icon">⚡</div>
+          <div>
+            <div class="format-title">Keynote Session</div>
+            <p class="format-desc">90-minute high-impact session for all-faculty or department meetings. Ideal as a conference opening or faculty development day kickoff.</p>
+            <div class="format-price">From $1,500</div>
+          </div>
+        </div>
+
+        <div class="format-card featured">
+          <div class="format-icon">🎯</div>
+          <div>
+            <div class="format-title">Half-Day Workshop ★ Most Popular</div>
+            <p class="format-desc">3.5-hour deep dive with hands-on practice. Participants leave with a working AI policy draft and a personal prompt library for their role.</p>
+            <div class="format-price">From $3,000</div>
+          </div>
+        </div>
+
+        <div class="format-card">
+          <div class="format-icon">🏗️</div>
+          <div>
+            <div class="format-title">Full-Day Intensive</div>
+            <p class="format-desc">7-hour comprehensive program with role-specific breakouts, live tool demonstrations, policy development, and implementation planning.</p>
+            <div class="format-price">From $5,500</div>
+          </div>
+        </div>
+
+        <div class="format-card">
+          <div class="format-icon">📅</div>
+          <div>
+            <div class="format-title">Multi-Session Series</div>
+            <p class="format-desc">3–6 sessions over a semester or academic year. Allows for implementation between sessions and genuine behavior change over time.</p>
+            <div class="format-price">Custom pricing</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div style="margin-top: 28px;">
+        <div class="section-label">Sample Half-Day Agenda</div>
+        <div class="agenda">
+          <div class="agenda-item">
+            <div class="agenda-time">9:00</div>
+            <div class="agenda-content">
+              <strong>What AI Actually Is (and Isn't)</strong>
+              <span>Plain-language explanation, the hallucination problem, and why most of what you've read is either overstated or undersold</span>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-time">9:45</div>
+            <div class="agenda-content">
+              <strong>Live Tool Demonstrations</strong>
+              <span>ChatGPT, Claude, Perplexity, and NotebookLM — same task, four tools, you watch the differences</span>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-time">10:30</div>
+            <div class="agenda-content">
+              <strong>Break</strong>
+              <span></span>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-time">10:45</div>
+            <div class="agenda-content">
+              <strong>AI for Your Role — Practical Applications</strong>
+              <span>Role-specific breakouts: faculty, designers, administrators, and online program staff each get targeted workflows</span>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-time">11:30</div>
+            <div class="agenda-content">
+              <strong>Academic Integrity & Policy Writing</strong>
+              <span>How to write a defensible policy, redesign assessments, and talk to students honestly about AI</span>
+            </div>
+          </div>
+          <div class="agenda-item">
+            <div class="agenda-time">12:15</div>
+            <div class="agenda-content">
+              <strong>Hands-On Practice & Q&A</strong>
+              <span>Participants work with their own real tasks; live troubleshooting and open questions</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-col">
+
+      <div class="section-label">Who Should Attend</div>
+      <div class="audience-list">
+        <div class="audience-item">
+          <div>
+            <span class="audience-role">🎓 Faculty — All Disciplines</span>
+            <p class="audience-why">Classroom applications, policy writing, assessment redesign, and student conversations</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div>
+            <span class="audience-role">🎨 Instructional Designers</span>
+            <p class="audience-why">AI in course development, rapid prototyping, and supporting faculty through the shift</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div>
+            <span class="audience-role">🏛️ Academic Administrators</span>
+            <p class="audience-why">Institutional strategy, policy frameworks, and leading faculty adoption</p>
+          </div>
+        </div>
+        <div class="audience-item">
+          <div>
+            <span class="audience-role">💻 Online Program Staff</span>
+            <p class="audience-why">Async learning implications, student AI use, and program-level policy</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top: 24px;">
+        <div class="section-label">Participant Outcomes</div>
+        <div class="outcomes">
+          <div class="outcome-item"><span class="outcome-check">✓</span>A working AI use policy ready for their syllabus or department</div>
+          <div class="outcome-item"><span class="outcome-check">✓</span>Hands-on experience with four AI tools relevant to their role</div>
+          <div class="outcome-item"><span class="outcome-check">✓</span>A personal prompt library for their most common tasks</div>
+          <div class="outcome-item"><span class="outcome-check">✓</span>A framework for evaluating new AI tools as they emerge</div>
+          <div class="outcome-item"><span class="outcome-check">✓</span>Confidence to lead the AI conversation on campus</div>
+          <div class="outcome-item"><span class="outcome-check">✓</span>All workshop materials and workbook for ongoing reference</div>
+        </div>
+      </div>
+
+      <div class="diff-box">
+        <div class="section-label">Why This Workshop Is Different</div>
+        <div class="diff-item"><span class="diff-arrow">→</span>Built by a practitioner with 15+ years as a Learning &amp; Curriculum Designer across large research universities and private institutions — including Director of a Curriculum Design Studio</div>
+        <div class="diff-item"><span class="diff-arrow">→</span>Also an Assistant Dean for Online Programs and an online faculty member — so every role in the room is represented in the room at the front</div>
+        <div class="diff-item"><span class="diff-arrow">→</span>Role-specific content for every seat — faculty, designers, and administrators all leave with something relevant to their actual job, not someone else's</div>
+        <div class="diff-item"><span class="diff-arrow">→</span>Practical, not theoretical — every concept connects to something participants can use the next day</div>
+      </div>
+
+      <div class="testimonial">
+        <blockquote>"Finally — AI training that understands what it's actually like to work in higher ed. I had a working syllabus policy before we finished the session."</blockquote>
+        <cite>— Associate Dean for Academic Affairs, School of Education</cite>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-contact">
+      <strong>The Futureproof Studio</strong><br>
+      futureproofstudio.co &nbsp;·&nbsp; [your email] &nbsp;·&nbsp; [your LinkedIn]
+    </div>
+    <a href="contact.html#book" class="footer-cta">Request a Proposal</a>
+  </div>
+
+</div>
+</div>
+
+<!-- FOOTER -->
+<footer style="background:#1a1f2e; padding:40px 6vw 28px; margin-top:40px;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #2d3748; padding-top:28px;">
+    <span style="font-size:0.78rem; color:#475569;">© 2026 The Futureproof Studio · All rights reserved</span>
+    <div style="display:flex; gap:24px;">
+      <a href="index.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Home</a>
+      <a href="course.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Course</a>
+      <a href="contact.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

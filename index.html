@@ -1,0 +1,1237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Futureproof Studio — Learn What's Next. Lead Where It Goes.</title>
+<meta name="description" content="Practical AI literacy training for faculty, instructional designers, administrators, and online program staff. Built by a practitioner with 15+ years of learning and curriculum design experience.">
+<meta name="keywords" content="AI literacy, higher education, faculty development, instructional design, online learning, AI training">
+<meta property="og:title" content="The Futureproof Studio — AI Literacy for Higher Education">
+<meta property="og:description" content="Practical, role-specific AI training built by a higher ed insider with 15+ years of learning and curriculum design experience.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://futureproofstudio.co">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The Futureproof Studio">
+<meta name="twitter:description" content="AI literacy for everyone who builds, teaches, and leads in higher ed.">
+<link rel="canonical" href="https://futureproofstudio.co">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #1a1f2e;
+    --slate:    #3d4a5c;
+    --muted:    #7a8a9a;
+    --rule:     #e2e8f0;
+    --bg:       #f8fafc;
+    --white:    #ffffff;
+    --teal:     #0d9488;
+    --teal-dim: #0a7a70;
+    --teal-lt:  #ccfbf1;
+    --teal-bg:  #f0fdfa;
+    --amber:    #d97706;
+    --amber-lt: #fef3c7;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Outfit', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    line-height: 1.7;
+    font-weight: 400;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--rule);
+    padding: 0 6vw;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+
+  .nav-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 2px;
+  }
+
+  .nav-the {
+    font-size: 7px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--muted);
+    font-family: 'Outfit', sans-serif;
+  }
+
+  .nav-name {
+    font-family: 'DM Serif Display', serif;
+    font-size: 15px;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.85rem;
+    color: var(--slate);
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+
+  .btn-nav {
+    background: var(--teal);
+    color: white !important;
+    padding: 9px 22px;
+    font-size: 0.82rem !important;
+    font-weight: 600 !important;
+    transition: background 0.2s !important;
+  }
+
+  .btn-nav:hover { background: var(--teal-dim) !important; }
+
+  /* ── BUTTONS ── */
+  .btn-primary {
+    display: inline-block;
+    background: var(--teal);
+    color: white;
+    padding: 15px 32px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover {
+    background: var(--teal-dim);
+    transform: translateY(-1px);
+  }
+
+  .btn-outline {
+    display: inline-block;
+    border: 1.5px solid var(--rule);
+    color: var(--slate);
+    padding: 14px 30px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.2s;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-outline:hover {
+    border-color: var(--teal);
+    color: var(--teal);
+  }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 140px 6vw 96px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--teal-bg);
+    border: 1px solid var(--teal-lt);
+    padding: 6px 14px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 24px;
+  }
+
+  .eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+    line-height: 1.08;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 24px;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .hero-sub {
+    font-size: 1.1rem;
+    color: var(--slate);
+    line-height: 1.75;
+    margin-bottom: 36px;
+    font-weight: 300;
+    max-width: 480px;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+
+  .hero-social-proof {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .avatar-stack {
+    display: flex;
+  }
+
+  .avatar {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: -8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  /* Hero right — value props */
+  .hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .value-card {
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 24px 28px;
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .value-card:hover {
+    border-color: var(--teal);
+    transform: translateX(4px);
+  }
+
+  .value-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .value-card h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .value-card p {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* ── LOGO BAR ── */
+  .logo-bar {
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    padding: 24px 6vw;
+    text-align: center;
+  }
+
+  .logo-bar p {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+
+  .audience-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .pill {
+    border: 1px solid var(--rule);
+    background: var(--white);
+    padding: 7px 18px;
+    font-size: 0.8rem;
+    color: var(--slate);
+    font-weight: 500;
+  }
+
+  /* ── ABOUT ── */
+  .about {
+    padding: 96px 6vw;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .about-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .about h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    line-height: 1.15;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+
+  .about h2 em { font-style: italic; color: var(--teal); }
+
+  .about p {
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-weight: 300;
+  }
+
+  .cred-list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-top: 32px;
+  }
+
+  .cred-item {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .cred-dot {
+    width: 8px; height: 8px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 7px;
+  }
+
+  .cred-item p {
+    font-size: 0.9rem;
+    color: var(--slate);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  .cred-item strong { color: var(--ink); font-weight: 600; }
+
+  /* About right quote */
+  .about-quote-wrap {
+    position: relative;
+  }
+
+  .about-quote {
+    background: var(--ink);
+    padding: 48px;
+    position: relative;
+  }
+
+  .about-quote::before {
+    content: '\201C';
+    font-family: 'DM Serif Display', serif;
+    font-size: 8rem;
+    color: var(--teal);
+    opacity: 0.2;
+    position: absolute;
+    top: 8px; left: 28px;
+    line-height: 1;
+  }
+
+  .about-quote blockquote {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.35rem;
+    font-style: italic;
+    color: #f1f5f9;
+    line-height: 1.55;
+    position: relative;
+    margin-bottom: 24px;
+  }
+
+  .about-quote cite {
+    font-size: 0.8rem;
+    color: #64748b;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-style: normal;
+  }
+
+  .about-quote-accent {
+    background: var(--teal);
+    padding: 20px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .about-quote-accent p {
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 500;
+    margin: 0;
+  }
+
+  /* ── COURSE SECTION ── */
+  .course-section {
+    background: var(--bg);
+    border-top: 1px solid var(--rule);
+    padding: 96px 6vw;
+  }
+
+  .course-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .section-header {
+    margin-bottom: 56px;
+  }
+
+  .section-header .label {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .section-header h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.8rem, 3vw, 2.6rem);
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.15;
+    margin-bottom: 14px;
+  }
+
+  .section-header h2 em { font-style: italic; color: var(--teal); }
+
+  .section-header p {
+    font-size: 1rem;
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  /* Featured course card */
+  .course-card-featured {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    overflow: hidden;
+    margin-bottom: 32px;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+  }
+
+  .course-card-left {
+    padding: 52px 52px 52px 52px;
+    border-right: 1px solid var(--rule);
+  }
+
+  .course-badge {
+    display: inline-block;
+    background: var(--teal-bg);
+    border: 1px solid var(--teal-lt);
+    color: var(--teal);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 5px 12px;
+    margin-bottom: 20px;
+  }
+
+  .course-card-left h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.9rem;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .course-card-left p {
+    font-size: 0.95rem;
+    color: var(--slate);
+    line-height: 1.75;
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+
+  .course-meta {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 32px;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 0.82rem;
+    color: var(--muted);
+  }
+
+  .meta-icon { font-size: 0.9rem; }
+
+  .course-includes {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 36px;
+  }
+
+  .include-item {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 0.88rem;
+    color: var(--slate);
+  }
+
+  .include-item::before {
+    content: '✓';
+    color: var(--teal);
+    font-weight: 700;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+
+  /* Course right - pricing */
+  .course-card-right {
+    padding: 48px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg);
+  }
+
+  .pricing-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .price-option {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 24px;
+    transition: border-color 0.2s;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .price-option:hover { border-color: var(--teal); }
+
+  .price-option.recommended {
+    border-color: var(--teal);
+  }
+
+  .recommended-tag {
+    position: absolute;
+    top: -10px; right: 16px;
+    background: var(--teal);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+  }
+
+  .price-tier {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+  }
+
+  .price-amount {
+    font-family: 'DM Serif Display', serif;
+    font-size: 2.2rem;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .price-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-bottom: 16px;
+    line-height: 1.5;
+  }
+
+  .price-cta {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    text-align: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .price-cta-fill { background: var(--teal); color: white; }
+  .price-cta-fill:hover { background: var(--teal-dim); }
+  .price-cta-outline { background: transparent; border: 1.5px solid var(--rule); color: var(--slate); }
+  .price-cta-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  .guarantee {
+    margin-top: 16px;
+    padding: 14px;
+    background: var(--amber-lt);
+    border: 1px solid #fde68a;
+    font-size: 0.78rem;
+    color: #92400e;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials {
+    padding: 96px 6vw;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 48px;
+  }
+
+  .testi-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 32px;
+    position: relative;
+  }
+
+  .testi-card::before {
+    content: '\201C';
+    font-family: 'DM Serif Display', serif;
+    font-size: 4rem;
+    color: var(--teal);
+    opacity: 0.15;
+    position: absolute;
+    top: 8px; left: 20px;
+    line-height: 1;
+  }
+
+  .testi-text {
+    font-family: 'DM Serif Display', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--slate);
+    line-height: 1.7;
+    margin-bottom: 20px;
+    position: relative;
+  }
+
+  .testi-author {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  .testi-role {
+    font-size: 0.78rem;
+    color: var(--teal);
+    margin-top: 3px;
+  }
+
+  /* ── FOR WHO SECTION ── */
+  .for-who {
+    background: var(--ink);
+    padding: 96px 6vw;
+  }
+
+  .for-who-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .for-who .label { color: #2dd4bf; }
+  .for-who h2 { color: #f1f5f9; }
+
+  .who-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: #2d3748;
+    margin-top: 48px;
+  }
+
+  .who-card {
+    background: var(--ink);
+    padding: 36px 28px;
+    transition: background 0.2s;
+  }
+
+  .who-card:hover { background: #232b3a; }
+
+  .who-emoji { font-size: 1.8rem; margin-bottom: 16px; }
+
+  .who-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    color: #f1f5f9;
+    margin-bottom: 10px;
+  }
+
+  .who-desc {
+    font-size: 0.85rem;
+    color: #64748b;
+    line-height: 1.65;
+  }
+
+  /* ── NEWSLETTER ── */
+  .newsletter {
+    background: var(--teal-bg);
+    border-top: 1px solid var(--teal-lt);
+    border-bottom: 1px solid var(--teal-lt);
+    padding: 72px 6vw;
+    text-align: center;
+  }
+
+  .newsletter h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    color: var(--ink);
+    margin-bottom: 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .newsletter p {
+    font-size: 1rem;
+    color: var(--slate);
+    margin-bottom: 32px;
+    font-weight: 300;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.7;
+  }
+
+  .email-form {
+    display: flex;
+    gap: 0;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .email-input {
+    flex: 1;
+    padding: 14px 18px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    border: 1.5px solid var(--rule);
+    border-right: none;
+    background: var(--white);
+    color: var(--ink);
+    outline: none;
+  }
+
+  .email-input:focus { border-color: var(--teal); }
+
+  .email-btn {
+    background: var(--teal);
+    color: white;
+    padding: 14px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    white-space: nowrap;
+  }
+
+  .email-btn:hover { background: var(--teal-dim); }
+
+  .newsletter-note {
+    font-size: 0.75rem;
+    color: var(--muted);
+    margin-top: 12px;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    padding: 56px 6vw 32px;
+  }
+
+  .footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #2d3748;
+    margin-bottom: 28px;
+  }
+
+  .footer-brand p {
+    font-size: 0.88rem;
+    color: #64748b;
+    line-height: 1.7;
+    margin-top: 16px;
+    max-width: 300px;
+    font-weight: 300;
+  }
+
+  .footer-col h4 {
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #475569;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  .footer-col ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-col ul a {
+    font-size: 0.88rem;
+    color: #64748b;
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-col ul a:hover { color: #2dd4bf; }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.78rem;
+    color: #475569;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; gap: 48px; }
+    .about { grid-template-columns: 1fr; }
+    .course-card-featured { grid-template-columns: 1fr; }
+    .course-card-left { border-right: none; border-bottom: 1px solid var(--rule); }
+    .testi-grid { grid-template-columns: 1fr; }
+    .who-grid { grid-template-columns: 1fr 1fr; }
+    .footer-top { grid-template-columns: 1fr; gap: 32px; }
+    .email-form { flex-direction: column; }
+    .email-input { border-right: 1.5px solid var(--rule); border-bottom: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">
+    <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+      <circle cx="22" cy="22" r="22" fill="#f0fdfa"/>
+      <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#0d9488"/>
+      <path d="M28 15.5 L35 22 L28 28.5" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div class="nav-wordmark">
+      <span class="nav-the">The</span>
+      <span class="nav-name">Futureproof Studio</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#about" class="active">About</a></li>
+    <li><a href="course.html">Course</a></li>
+    <li><a href="workshops.html">Workshops</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="https://YOUR-TEACHABLE-URL.teachable.com" target="_blank" class="btn-nav">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section style="background: var(--white);">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-eyebrow">
+        <div class="eyebrow-dot"></div>
+        Now Enrolling · Self-Paced
+      </div>
+      <h1>Learn what's next.<br><em>Lead where it goes.</em></h1>
+      <p class="hero-sub">Practical, expert-led training for professionals navigating AI, online learning, and the future of their field — whatever industry you're in.</p>
+      <div class="hero-actions">
+        <a href="course.html" class="btn-primary">See the Course</a>
+        <a href="#about" class="btn-outline">About the Studio</a>
+      </div>
+      <div class="hero-social-proof">
+        <div class="avatar-stack">
+          <div class="avatar" style="background:#0d9488;">F</div>
+          <div class="avatar" style="background:#3d4a5c;">D</div>
+          <div class="avatar" style="background:#d97706;">A</div>
+          <div class="avatar" style="background:#6d28d9;">O</div>
+        </div>
+        <span>Trusted by faculty, designers, administrators & teams</span>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <div>
+          <h3>Built for your actual role</h3>
+          <p>Not generic AI training repackaged for your industry. Every course is designed with your specific context, challenges, and goals in mind.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <div>
+          <h3>Immediately applicable</h3>
+          <p>You'll leave each module with something you can use the next day — not theory for some future version of your work.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🔭</div>
+        <div>
+          <h3>Designed for what's coming</h3>
+          <p>The frameworks you'll learn are durable. As the technology evolves, your ability to evaluate and adapt it stays current.</p>
+        </div>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🏛️</div>
+        <div>
+          <h3>From someone who works in your world</h3>
+          <p>Created by a faculty member, instructional designer, and online program leader — not a tech consultant who's never taught a class.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE PILLS -->
+<div class="logo-bar">
+  <p>Designed for every role that builds, teaches, and leads</p>
+  <div class="audience-pills">
+    <div class="pill">🎓 Faculty — All Disciplines</div>
+    <div class="pill">🎨 Instructional Designers</div>
+    <div class="pill">🏛️ Academic Administrators</div>
+    <div class="pill">💻 Online Program Staff</div>
+    <div class="pill">🏢 Business & Professional Teams</div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" style="background: var(--white);">
+  <div class="about">
+    <div>
+      <div class="about-label">About The Futureproof Studio</div>
+      <h2>Built from the <em>inside.</em></h2>
+      <p>Most AI and future-skills training is built by tech people who don't understand teaching — or by teachers who don't understand design. The Futureproof Studio was built by someone with 15+ years of experience doing both — spanning large research universities and private institutions across two continents.</p>
+      <p>Our courses are created by someone who has spent 15+ years designing and building curriculum across large research universities and private institutions internationally — and who now brings that same depth to professional and industry audiences.</p>
+      <div class="cred-list">
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <p><strong>15+ Years Learning & Curriculum Design</strong> — Large research universities and private institutions across two countries</p>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <p><strong>Director, Curriculum Design Studio</strong> — Led a university-based curriculum design studio and team</p>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <p><strong>Assistant Dean, Online Programs</strong> — College of Engineering</p>
+        </div>
+        <div class="cred-item">
+          <div class="cred-dot"></div>
+          <p><strong>Online Faculty & Course Developer</strong> — Graduate Certificate in Learning Design and Writing & Communications</p>
+        </div>
+      </div>
+    </div>
+    <div class="about-quote-wrap">
+      <div class="about-quote">
+        <blockquote>"After 15+ years designing curriculum across universities on two continents — and leading a curriculum design studio — I built the training I couldn't find anywhere else. For the people I work with every day, in the language they actually speak."</blockquote>
+        <cite>Founder, The Futureproof Studio</cite>
+      </div>
+      <div class="about-quote-accent">
+        <p>15+ years of real instructional design experience</p>
+        <svg width="20" height="20" viewBox="0 0 44 44" fill="none">
+          <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="white"/>
+          <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="white"/>
+          <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="white"/>
+          <path d="M28 15.5 L35 22 L28 28.5" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COURSE SECTION -->
+<section id="course" class="course-section">
+  <div class="course-inner">
+    <div class="section-header">
+      <div class="label">Featured Course — Now Open</div>
+      <h2>AI Literacy for <em>Higher Education</em></h2>
+      <p>The only AI workshop built for everyone in the academic ecosystem — faculty, designers, administrators, and online program staff — with role-specific content throughout.</p>
+    </div>
+
+    <div class="course-card-featured">
+      <div class="course-card-left">
+        <div class="course-badge">Self-Paced · All Disciplines · 4 Role Tracks</div>
+        <h3>Understanding AI — and actually using it well.</h3>
+        <p>Six focused modules covering how AI works, what it gets wrong, how to write policy, how to save time, and how to lead the conversation at your institution. Built by a practitioner with 15+ years of learning and curriculum design experience. Designed for your role.</p>
+        <div class="course-meta">
+          <div class="meta-item"><span class="meta-icon">🎬</span> 6 video modules</div>
+          <div class="meta-item"><span class="meta-icon">⏱️</span> ~2.5 hours total</div>
+          <div class="meta-item"><span class="meta-icon">♾️</span> Lifetime access</div>
+          <div class="meta-item"><span class="meta-icon">📋</span> Templates included</div>
+        </div>
+        <div class="course-includes">
+          <div class="include-item">Six recorded video modules with role-specific application notes</div>
+          <div class="include-item">AI policy template library — five syllabus-ready versions</div>
+          <div class="include-item">60+ educator-tested prompts organized by role</div>
+          <div class="include-item">Participant workbook with Bloom's-aligned knowledge checks</div>
+          <div class="include-item">Assessment redesign guide for the AI era</div>
+          <div class="include-item">Lifetime access and all future updates</div>
+        </div>
+        <a href="#" class="btn-primary">View Full Course Details →</a>
+      </div>
+      <div class="course-card-right">
+        <div class="pricing-stack">
+          <div class="price-option">
+            <div class="price-tier">Solo</div>
+            <div class="price-amount">$97</div>
+            <div class="price-desc">All 6 modules, workbook, and prompt starter pack. Perfect for individual faculty and staff.</div>
+            <a href="#" class="price-cta price-cta-outline">Enroll — Solo</a>
+          </div>
+          <div class="price-option recommended">
+            <div class="recommended-tag">Most Popular</div>
+            <div class="price-tier">Full Bundle</div>
+            <div class="price-amount">$197</div>
+            <div class="price-desc">Everything in Solo, plus the policy template library, assessment guide, and lifetime updates.</div>
+            <a href="#" class="price-cta price-cta-fill">Enroll — Full Bundle</a>
+          </div>
+          <div class="price-option">
+            <div class="price-tier">Institutional</div>
+            <div class="price-amount">$997</div>
+            <div class="price-desc">Up to 25 seats, facilitator guide, and a live group Q&A session. Department and CTL ready.</div>
+            <a href="#" class="price-cta price-cta-outline">Contact for Institutional</a>
+          </div>
+        </div>
+        <div class="guarantee">
+          🛡️ <strong>30-day guarantee.</strong> Complete the course — if it isn't worth it, get a full refund. No questions asked.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section style="background: var(--white); border-top: 1px solid var(--rule);">
+  <div class="testimonials">
+    <div class="section-header">
+      <div class="label">What People Are Saying</div>
+      <h2>From people who work in <em>higher ed.</em></h2>
+    </div>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="testi-text">"I've sat through three AI workshops this year. This is the first one where I left with something I could actually use the next day. The role-specific framing made all the difference."</div>
+        <div class="testi-author">Associate Professor</div>
+        <div class="testi-role">College of Engineering</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-text">"As an instructional designer, I've been frustrated by AI training that assumes I'm a faculty member. This workshop finally spoke to what I actually do."</div>
+        <div class="testi-author">Senior Instructional Designer</div>
+        <div class="testi-role">Research University</div>
+      </div>
+      <div class="testi-card">
+        <div class="testi-text">"I needed something I could share with my entire department — faculty, staff, and administrators — without having to explain why it was relevant. This was it."</div>
+        <div class="testi-author">Associate Dean for Academic Affairs</div>
+        <div class="testi-role">School of Education</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section id="who" class="for-who">
+  <div class="for-who-inner">
+    <div class="section-header" style="margin-bottom: 0;">
+      <div class="label" style="color: #2dd4bf;">Who It's For</div>
+      <h2 style="color: #f1f5f9;">Every role. <em style="color: #2dd4bf;">One studio.</em></h2>
+    </div>
+    <div class="who-grid">
+      <div class="who-card">
+        <div class="who-emoji">🎓</div>
+        <div class="who-title">Faculty</div>
+        <div class="who-desc">Practical tools for your classroom, your feedback workflow, and your syllabus — across every discipline.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🎨</div>
+        <div class="who-title">Learning Designers</div>
+        <div class="who-desc">AI in the design process, rapid course development, and how to lead faculty through the shift.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">🏛️</div>
+        <div class="who-title">Administrators</div>
+        <div class="who-desc">Policy frameworks, faculty change management, and institutional strategy for the AI era.</div>
+      </div>
+      <div class="who-card">
+        <div class="who-emoji">💻</div>
+        <div class="who-title">Online Program Staff</div>
+        <div class="who-desc">AI-specific challenges for async learning, program relevance, and student-facing communication.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter">
+  <h2>Stay current. It's free.</h2>
+  <p>Short, practical insights on AI in higher education and professional learning — delivered when there's something worth saying. No filler.</p>
+  <div class="email-form">
+    <input type="email" class="email-input" placeholder="your@email.edu">
+    <button class="email-btn">Subscribe</button>
+  </div>
+  <p class="newsletter-note">No spam. Unsubscribe anytime. Usually 1–2 emails per month.</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <circle cx="22" cy="22" r="22" fill="#134e4a"/>
+            <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#2dd4bf"/>
+            <path d="M28 15.5 L35 22 L28 28.5" stroke="#2dd4bf" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <div>
+            <div style="font-size:7px; letter-spacing:0.2em; text-transform:uppercase; color:#475569; font-family:'Outfit',sans-serif;">The</div>
+            <div style="font-family:'DM Serif Display',serif; font-size:15px; color:#f1f5f9;">Futureproof Studio</div>
+          </div>
+        </div>
+        <p>Practical learning for professionals navigating a world that keeps changing. Learn what's next. Lead where it goes.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Studio</h4>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="course.html">AI Literacy Course</a></li>
+          <li><a href="workshops.html">Workshops</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://linkedin.com/company/thefutureproofstudio" target="_blank">LinkedIn</a></li>
+          <li><a href="contact.html#newsletter">Newsletter</a></li>
+          <li><a href="https://futureproofstudio.co">futureproofstudio.co</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 The Futureproof Studio · All rights reserved</span>
+      <span>futureproofstudio.co</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

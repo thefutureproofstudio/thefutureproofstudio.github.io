@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Literacy for Higher Education — The Futureproof Studio</title>
+<meta name="description" content="A practical, role-specific AI literacy course for faculty, instructional designers, administrators, and online program staff. Built by a practitioner with 15+ years of experience.">
+<meta property="og:title" content="AI Literacy for Higher Education — The Futureproof Studio">
+<meta property="og:description" content="The only AI workshop with role-specific content for every seat in the room. Faculty, designers, administrators, and online program staff.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://futureproofstudio.co/course.html">
+<link rel="canonical" href="https://futureproofstudio.co/course.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,700&family=Instrument+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --void: #f4f7f9;
+    --deep: #eaf0f5;
+    --panel: #ffffff;
+    --border: #d0dce8;
+    --muted-text: #5a6e82;
+    --body-text: #2d3e50;
+    --light: #1a2b3c;
+    --white: #0f1e2d;
+    --teal: #007a63;
+    --teal-dim: #005f4d;
+    --gold: #b07d00;
+    --coral: #c0392b;
+    --font-display: 'Fraunces', serif;
+    --font-body: 'Instrument Sans', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--void);
+    color: var(--body-text);
+    font-family: var(--font-body);
+    font-weight: 300;
+    line-height: 1.75;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE TEXTURE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 6vw;
+    background: rgba(244, 247, 249, 0.92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .nav-logo span { color: var(--teal); }
+
+  .nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--muted-text);
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: white !important;
+    padding: 9px 22px;
+    font-weight: 600 !important;
+    letter-spacing: 0.04em;
+    transition: background 0.2s !important;
+  }
+
+  .nav-cta:hover { background: var(--teal-dim) !important; color: white !important; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 120px 6vw 80px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 0%, rgba(0,122,99,0.08) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 20% 80%, rgba(176,125,0,0.05) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 40% at 80% 80%, rgba(192,57,43,0.04) 0%, transparent 60%);
+    z-index: 0;
+  }
+
+  .hero > * { position: relative; z-index: 1; }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    padding: 7px 18px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 36px;
+    opacity: 0;
+    animation: fadeUp 0.6s ease forwards 0.2s;
+  }
+
+  .eyebrow-dot {
+    width: 6px; height: 6px;
+    background: var(--teal);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.4; transform: scale(0.7); }
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--white);
+    letter-spacing: -0.02em;
+    max-width: 900px;
+    margin: 0 auto 28px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.35s;
+  }
+
+  .hero-title .italic { font-style: italic; color: var(--teal); font-weight: 300; }
+  .hero-title .gold { color: var(--gold); }
+
+  .hero-sub {
+    font-size: clamp(1rem, 1.8vw, 1.2rem);
+    color: var(--muted-text);
+    max-width: 620px;
+    margin: 0 auto 48px;
+    line-height: 1.8;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.5s;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 72px;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.65s;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: white;
+    padding: 16px 36px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-primary:hover { background: var(--teal-dim); transform: translateY(-2px); }
+
+  .btn-ghost {
+    border: 1px solid var(--border);
+    color: var(--light);
+    padding: 16px 36px;
+    font-family: var(--font-body);
+    font-size: 0.88rem;
+    font-weight: 400;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+    background: transparent;
+  }
+
+  .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+
+  /* Audience pills */
+  .audience-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.7s ease forwards 0.8s;
+  }
+
+  .pill {
+    border: 1px solid var(--border);
+    background: rgba(255,255,255,0.03);
+    padding: 8px 18px;
+    font-size: 0.78rem;
+    color: var(--muted-text);
+    letter-spacing: 0.04em;
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+
+  .pill:hover { border-color: var(--teal); color: var(--teal); background: rgba(0,201,167,0.05); }
+
+  /* ── STATS BAR ── */
+  .stats-bar {
+    background: var(--panel);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    position: relative; z-index: 1;
+  }
+
+  .stat {
+    padding: 36px 24px;
+    text-align: center;
+    border-right: 1px solid var(--border);
+  }
+
+  .stat:last-child { border-right: none; }
+
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .stat-num span { color: var(--teal); }
+
+  .stat-label {
+    font-size: 0.78rem;
+    color: var(--muted-text);
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+  }
+
+  /* ── SHARED SECTION STYLES ── */
+  .section { padding: 100px 6vw; position: relative; z-index: 1; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--teal);
+    margin-bottom: 16px;
+  }
+
+  h2.section-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  h2.section-title em { font-style: italic; font-weight: 300; color: var(--teal); }
+
+  .section-intro {
+    font-size: 1rem;
+    color: var(--muted-text);
+    max-width: 560px;
+    margin-bottom: 56px;
+    line-height: 1.8;
+  }
+
+  /* ── WHO IS THIS FOR ── */
+  .for-whom { background: var(--deep); }
+
+  .roles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+    background: var(--border);
+  }
+
+  .role-card {
+    background: var(--deep);
+    padding: 44px 40px;
+    transition: background 0.25s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .role-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  .role-card:nth-child(1)::before { background: var(--teal); }
+  .role-card:nth-child(2)::before { background: var(--gold); }
+  .role-card:nth-child(3)::before { background: var(--coral); }
+  .role-card:nth-child(4)::before { background: #a78bfa; }
+
+  .role-card:hover { background: var(--panel); }
+  .role-card:hover::before { transform: scaleX(1); }
+
+  .role-icon { font-size: 2rem; margin-bottom: 20px; }
+
+  .role-title {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+
+  .role-desc {
+    font-size: 0.88rem;
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .role-gets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .role-gets li {
+    font-size: 0.82rem;
+    color: var(--body-text);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .role-gets li::before {
+    content: '→';
+    font-size: 0.75rem;
+    margin-top: 2px;
+    flex-shrink: 0;
+  }
+
+  .role-card:nth-child(1) .role-gets li::before { color: var(--teal); }
+  .role-card:nth-child(2) .role-gets li::before { color: var(--gold); }
+  .role-card:nth-child(3) .role-gets li::before { color: var(--coral); }
+  .role-card:nth-child(4) .role-gets li::before { color: #a78bfa; }
+
+  /* ── DIFFERENTIATOR ── */
+  .differentiator { background: var(--void); }
+
+  .diff-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+  }
+
+  .diff-left {}
+
+  .diff-quote {
+    font-family: var(--font-display);
+    font-size: clamp(1.5rem, 2.5vw, 2rem);
+    font-style: italic;
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.45;
+    padding-left: 28px;
+    border-left: 3px solid var(--teal);
+    margin-bottom: 40px;
+  }
+
+  .credentials {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .credential {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+
+  .cred-icon {
+    width: 36px; height: 36px;
+    background: rgba(0,122,99,0.08);
+    border: 1px solid rgba(0,122,99,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .cred-text strong {
+    display: block;
+    color: var(--white);
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .cred-text span {
+    font-size: 0.82rem;
+    color: var(--muted-text);
+  }
+
+  .diff-right {}
+
+  .compare-table {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    overflow: hidden;
+  }
+
+  .compare-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background: var(--deep);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-header div {
+    padding: 14px 20px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    border-right: 1px solid var(--border);
+  }
+
+  .compare-header div:last-child { border-right: none; }
+  .compare-header div.ours { color: var(--teal); }
+
+  .compare-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-row:last-child { border-bottom: none; }
+
+  .compare-row div {
+    padding: 16px 20px;
+    font-size: 0.82rem;
+    border-right: 1px solid var(--border);
+    color: var(--muted-text);
+    line-height: 1.5;
+  }
+
+  .compare-row div:last-child { border-right: none; }
+  .compare-row div.ours { color: var(--body-text); background: rgba(0,201,167,0.04); }
+  .compare-row div.topic { color: var(--light); font-weight: 500; }
+
+  .check { color: var(--teal); }
+  .cross { color: #ff6b6b; opacity: 0.6; }
+
+  /* ── MODULES ── */
+  .modules-section { background: var(--deep); }
+
+  .modules-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    margin-top: 8px;
+  }
+
+  .module {
+    background: var(--deep);
+    padding: 36px 30px;
+    transition: background 0.2s;
+    cursor: default;
+  }
+
+  .module:hover { background: var(--panel); }
+
+  .module-number {
+    font-family: var(--font-display);
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--border);
+    line-height: 1;
+    margin-bottom: 16px;
+    transition: color 0.2s;
+  }
+
+  .module:hover .module-number { color: var(--teal); }
+
+  .module-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .module-desc {
+    font-size: 0.83rem;
+    color: var(--muted-text);
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .module-tracks {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .track-tag {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px;
+    border-radius: 100px;
+    border: 1px solid;
+  }
+
+  .track-tag.faculty { color: var(--teal); border-color: rgba(0,122,99,0.35); }
+  .track-tag.designer { color: var(--gold); border-color: rgba(176,125,0,0.35); }
+  .track-tag.admin { color: var(--coral); border-color: rgba(192,57,43,0.35); }
+  .track-tag.online { color: #6d4fc2; border-color: rgba(109,79,194,0.35); }
+
+  /* ── WHAT'S INCLUDED ── */
+  .included-section { background: var(--void); }
+
+  .included-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .include-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 32px;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .include-card:hover {
+    border-color: var(--teal);
+    transform: translateY(-3px);
+  }
+
+  .include-emoji { font-size: 1.8rem; margin-bottom: 16px; }
+
+  .include-card h3 {
+    font-family: var(--font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 8px;
+  }
+
+  .include-card p {
+    font-size: 0.83rem;
+    color: var(--muted-text);
+    line-height: 1.65;
+  }
+
+  /* ── TRACKS ── */
+  .tracks-section { background: var(--deep); }
+
+  .tracks-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .track-card {
+    background: var(--deep);
+    padding: 40px 28px;
+    text-align: center;
+    transition: background 0.2s;
+  }
+
+  .track-card:hover { background: var(--panel); }
+
+  .track-emoji { font-size: 2rem; margin-bottom: 16px; }
+
+  .track-name {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .track-card:nth-child(1) .track-name { color: var(--teal); }
+  .track-card:nth-child(2) .track-name { color: var(--gold); }
+  .track-card:nth-child(3) .track-name { color: var(--coral); }
+  .track-card:nth-child(4) .track-name { color: #6d4fc2; }
+
+  .track-who {
+    font-size: 0.8rem;
+    color: var(--muted-text);
+    line-height: 1.65;
+  }
+
+  /* ── PRICING ── */
+  .pricing-section { background: var(--void); text-align: center; }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    max-width: 960px;
+    margin: 56px auto 0;
+  }
+
+  .price-card {
+    background: var(--deep);
+    padding: 48px 36px;
+    text-align: left;
+    position: relative;
+    transition: background 0.2s;
+  }
+
+  .price-card:hover { background: var(--panel); }
+
+  .price-card.featured {
+    background: var(--panel);
+  }
+
+  .featured-label {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    background: var(--teal);
+    color: white;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    padding: 6px;
+  }
+
+  .price-card.featured { padding-top: 60px; }
+
+  .price-tier-name {
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted-text);
+    margin-bottom: 16px;
+  }
+
+  .price-amount {
+    font-family: var(--font-display);
+    font-size: 3.5rem;
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+
+  .price-sub {
+    font-size: 0.82rem;
+    color: var(--muted-text);
+    margin-bottom: 32px;
+  }
+
+  .price-features {
+    list-style: none;
+    margin-bottom: 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .price-features li {
+    font-size: 0.84rem;
+    color: var(--body-text);
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    line-height: 1.5;
+  }
+
+  .price-features li .check { flex-shrink: 0; margin-top: 1px; }
+
+  .price-btn-wrap { margin-top: auto; }
+
+  .btn-price {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    text-align: center;
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+  }
+
+  .btn-price-outline {
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--body-text);
+  }
+
+  .btn-price-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  .btn-price-fill {
+    background: var(--teal);
+    color: white;
+  }
+
+  .btn-price-fill:hover { background: var(--teal-dim); }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { background: var(--deep); }
+
+  .testi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-top: 56px;
+  }
+
+  .testi-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    padding: 32px;
+    position: relative;
+  }
+
+  .testi-card::before {
+    content: '"';
+    font-family: var(--font-display);
+    font-size: 5rem;
+    color: var(--teal);
+    opacity: 0.2;
+    position: absolute;
+    top: 12px; left: 24px;
+    line-height: 1;
+  }
+
+  .testi-text {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 0.97rem;
+    color: var(--light);
+    line-height: 1.7;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .testi-author {
+    font-size: 0.78rem;
+    color: var(--muted-text);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .testi-role {
+    font-size: 0.75rem;
+    color: var(--teal);
+    margin-top: 4px;
+  }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--void); }
+
+  .faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 80px;
+    margin-top: 48px;
+  }
+
+  .faq-item {
+    padding: 28px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .faq-q {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 10px;
+  }
+
+  .faq-a {
+    font-size: 0.87rem;
+    color: var(--muted-text);
+    line-height: 1.75;
+  }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    background: var(--deep);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 120px 6vw;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .final-cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse 60% 60% at 50% 100%, rgba(0,122,99,0.08) 0%, transparent 70%);
+  }
+
+  .final-cta > * { position: relative; z-index: 1; }
+
+  .final-cta h2 {
+    font-family: var(--font-display);
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 20px;
+  }
+
+  .final-cta h2 em { font-style: italic; color: var(--teal); font-weight: 300; }
+
+  .final-cta p {
+    color: var(--muted-text);
+    max-width: 480px;
+    margin: 0 auto 48px;
+    font-size: 1rem;
+  }
+
+  footer {
+    background: var(--void);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 28px;
+    font-size: 0.75rem;
+    color: var(--muted-text);
+    letter-spacing: 0.04em;
+    position: relative; z-index: 1;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .stats-bar, .roles-grid, .modules-grid,
+    .included-grid, .tracks-grid, .pricing-grid,
+    .testi-grid, .faq-grid, .diff-layout {
+      grid-template-columns: 1fr;
+    }
+    .stat { border-right: none; border-bottom: 1px solid var(--border); }
+    .nav-links { display: none; }
+    .compare-table { overflow-x: auto; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav" style="position:fixed; top:0; left:0; right:0; z-index:100; background:rgba(255,255,255,0.95); backdrop-filter:blur(10px); border-bottom:1px solid #e2e8f0; padding:0 6vw; height:64px; display:flex; align-items:center; justify-content:space-between;">
+  <a href="index.html" style="display:flex; align-items:center; gap:10px; text-decoration:none;">
+    <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+      <circle cx="22" cy="22" r="22" fill="#f0fdfa"/>
+      <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#0d9488"/>
+      <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#0d9488"/>
+      <path d="M28 15.5 L35 22 L28 28.5" stroke="#0d9488" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    </svg>
+    <div style="display:flex; flex-direction:column; line-height:1; gap:2px;">
+      <span style="font-size:7px; letter-spacing:0.22em; text-transform:uppercase; color:#7a8a9a; font-family:'Outfit',sans-serif;">The</span>
+      <span style="font-family:'DM Serif Display',serif; font-size:15px; color:#1a1f2e; letter-spacing:-0.01em;">Futureproof Studio</span>
+    </div>
+  </a>
+  <ul style="display:flex; align-items:center; gap:32px; list-style:none;">
+    <li><a href="index.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none; transition:color 0.2s;">Home</a></li>
+    <li><a href="course.html" style="font-size:0.85rem; color:#0d9488; font-weight:500; text-decoration:none;">Course</a></li>
+    <li><a href="workshops.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none;">Workshops</a></li>
+    <li><a href="contact.html" style="font-size:0.85rem; color:#3d4a5c; text-decoration:none;">Contact</a></li>
+    <li><a href="https://YOUR-TEACHABLE-URL.teachable.com" target="_blank" style="background:#0d9488; color:white; padding:9px 22px; font-size:0.82rem; font-weight:600; text-decoration:none;">Enroll Now</a></li>
+  </ul>
+</nav>
+<div style="height:64px;"></div>
+
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">AI<span>×</span>HE</div>
+  <ul class="nav-links">
+    <li><a href="#who">Who It's For</a></li>
+    <li><a href="#modules">Modules</a></li>
+    <li><a href="https://YOUR-TEACHABLE-URL.teachable.com">Pricing</a></li>
+    <li><a href="https://YOUR-TEACHABLE-URL.teachable.com" class="nav-cta">Enroll Now</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-eyebrow">
+    <div class="eyebrow-dot"></div>
+    Now Enrolling · Self-Paced · All Disciplines
+  </div>
+  <h1 class="hero-title">
+    AI literacy<br>
+    for <span class="italic">everyone</span> who<br>
+    builds, teaches <span class="gold">&</span> leads<br>
+    in higher ed.
+  </h1>
+  <p class="hero-sub">
+    The only AI workshop built by a practitioner with 15+ years of learning and curriculum design experience across large research universities and private institutions internationally — including as Director of a Curriculum Design Studio and Assistant Dean for Online Programs.
+  </p>
+  <div class="hero-actions">
+    <a href="https://YOUR-TEACHABLE-URL.teachable.com" class="btn-primary">Enroll Now</a>
+    <a href="#modules" class="btn-ghost">See the Curriculum</a>
+  </div>
+  <div class="audience-pills">
+    <div class="pill">Faculty · All Disciplines</div>
+    <div class="pill">Instructional Designers</div>
+    <div class="pill">Academic Administrators</div>
+    <div class="pill">Online Program Directors</div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats-bar">
+  <div class="stat">
+    <div class="stat-num">6<span>+</span></div>
+    <div class="stat-label">focused modules<br>zero jargon</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">role-specific tracks<br>for every higher ed role</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">2.5<span>h</span></div>
+    <div class="stat-label">self-paced content<br>lifetime access</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">1</div>
+    <div class="stat-label">workshop built by someone<br>who actually works in higher ed</div>
+  </div>
+</div>
+
+<!-- WHO IS THIS FOR -->
+<section class="section for-whom" id="who">
+  <div class="section-tag">Who It's For</div>
+  <h2 class="section-title">Every role.<br><em>One workshop.</em></h2>
+  <p class="section-intro">Most AI training forces you to translate generic content into your context. This one was built with your role in mind from the start.</p>
+  <div class="roles-grid">
+    <div class="role-card">
+      <div class="role-icon">🎓</div>
+      <div class="role-title">Faculty</div>
+      <div class="role-desc">Whether you're in engineering, the humanities, or anywhere in between — you'll get practical tools you can use this week, not theory for some future version of your course.</div>
+      <ul class="role-gets">
+        <li>AI policy templates for your syllabus</li>
+        <li>Assessment redesign strategies for the AI era</li>
+        <li>Time-saving workflows for feedback and prep</li>
+        <li>How to talk to students about AI honestly</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🎨</div>
+      <div class="role-title">Instructional & Learning Designers</div>
+      <div class="role-desc">You're already thinking about learning at a systems level. This workshop shows you how AI changes the design process — and how to help faculty you support get up to speed.</div>
+      <ul class="role-gets">
+        <li>AI in rapid course development and iteration</li>
+        <li>Prompting strategies for learning objectives and assessments</li>
+        <li>How to lead faculty through AI adoption</li>
+        <li>Accessibility and quality considerations</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">🏛️</div>
+      <div class="role-title">Academic Administrators</div>
+      <div class="role-desc">Deans, chairs, and directors need a different kind of AI literacy — one that helps them set policy, support faculty, and lead institutional change without getting lost in the tech.</div>
+      <ul class="role-gets">
+        <li>Frameworks for institutional AI policy</li>
+        <li>How to lead faculty adoption, not mandate it</li>
+        <li>Risk, liability, and academic integrity at scale</li>
+        <li>Talking points for skeptical faculty and boards</li>
+      </ul>
+    </div>
+    <div class="role-card">
+      <div class="role-icon">💻</div>
+      <div class="role-title">Online Program Directors & Staff</div>
+      <div class="role-desc">Online programs face AI challenges first and fastest. You need to understand the tools your faculty and students are using — and build programs that stay relevant.</div>
+      <ul class="role-gets">
+        <li>AI-specific considerations for async and online learning</li>
+        <li>How to evaluate AI tools for program adoption</li>
+        <li>Student-facing AI literacy and policy communication</li>
+        <li>Keeping online programs competitive in the AI era</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- DIFFERENTIATOR -->
+<section class="section differentiator">
+  <div class="diff-layout">
+    <div class="diff-left">
+      <div class="section-tag">Why This Is Different</div>
+      <h2 class="section-title">Built from the <em>inside.</em></h2>
+      <div class="diff-quote">"Most AI training is built by tech people who don't understand teaching, or teachers who don't understand design. I've spent 15+ years doing both — as a Learning and Curriculum Designer, Studio Director, and online program leader across institutions on two continents."</div>
+      <div class="credentials">
+        <div class="credential">
+          <div class="cred-icon">🎨</div>
+          <div class="cred-text">
+            <strong>15+ Years Learning & Curriculum Design</strong>
+            <span>Across large research universities and private institutions internationally — with deep roots in both online and face-to-face program design</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">🏗️</div>
+          <div class="cred-text">
+            <strong>Director, Curriculum Design Studio</strong>
+            <span>Led a university-based design studio — managing teams, clients, and large-scale curriculum transformation projects</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">💻</div>
+          <div class="cred-text">
+            <strong>Assistant Dean, Online Programs — College of Engineering</strong>
+            <span>Understands what large-scale online program operations, faculty support, and institutional change actually look like from the inside</span>
+          </div>
+        </div>
+        <div class="credential">
+          <div class="cred-icon">📡</div>
+          <div class="cred-text">
+            <strong>Online Faculty & Course Developer</strong>
+            <span>Active instructor in a graduate learning design certificate — teaches the designers who design, with broad reach across disciplines</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="diff-right">
+      <div class="compare-table">
+        <div class="compare-header">
+          <div>What you need</div>
+          <div>Generic AI courses</div>
+          <div class="ours">This workshop</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Higher ed context</div>
+          <div><span class="cross">✗</span> Corporate examples</div>
+          <div class="ours"><span class="check">✓</span> Built for academia</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Role-specific content</div>
+          <div><span class="cross">✗</span> One-size-fits-all</div>
+          <div class="ours"><span class="check">✓</span> 4 tailored tracks</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Online/async focus</div>
+          <div><span class="cross">✗</span> Assumes in-person</div>
+          <div class="ours"><span class="check">✓</span> Online-first design</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Instructional design lens</div>
+          <div><span class="cross">✗</span> Tech-only perspective</div>
+          <div class="ours"><span class="check">✓</span> Pedagogy-first</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Academic integrity depth</div>
+          <div><span class="cross">✗</span> Surface coverage</div>
+          <div class="ours"><span class="check">✓</span> Policy + practice</div>
+        </div>
+        <div class="compare-row">
+          <div class="topic">Usable on day one</div>
+          <div><span class="cross">✗</span> Theory-heavy</div>
+          <div class="ours"><span class="check">✓</span> Immediate application</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODULES -->
+<section class="section modules-section" id="modules">
+  <div class="section-tag">The Curriculum</div>
+  <h2 class="section-title">Six modules.<br><em>Zero fluff.</em></h2>
+  <p class="section-intro">Each module includes video content, a downloadable resource, and role-specific application notes for faculty, designers, administrators, and online program staff.</p>
+  <div class="modules-grid">
+    <div class="module">
+      <div class="module-number">01</div>
+      <div class="module-title">Understanding AI Without the Hype</div>
+      <div class="module-desc">What large language models actually are, what they reliably can and can't do, and how to evaluate new tools as they emerge — without getting lost in marketing claims.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag designer">Designers</span>
+        <span class="track-tag admin">Admins</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-number">02</div>
+      <div class="module-title">Tool Landscape & Live Demos</div>
+      <div class="module-desc">Side-by-side walkthroughs of ChatGPT, Claude, Perplexity, and NotebookLM. Know which tool to reach for, when to use each, and what to watch out for.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag designer">Designers</span>
+        <span class="track-tag admin">Admins</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-number">03</div>
+      <div class="module-title">AI for Your Role, Practically</div>
+      <div class="module-desc">Role-specific use cases: faculty get feedback and lesson design workflows; designers get rapid development strategies; admins get communication and policy tools; online staff get program-level applications.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag designer">Designers</span>
+        <span class="track-tag admin">Admins</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-number">04</div>
+      <div class="module-title">Academic Integrity in the AI Era</div>
+      <div class="module-desc">How to write a defensible AI policy, redesign assessments that matter, detect misuse without paranoia, and have honest conversations with students about what integrity means now.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag admin">Admins</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-number">05</div>
+      <div class="module-title">Hands-On Practice</div>
+      <div class="module-desc">Guided prompting exercises using your own real work. You'll leave with something immediately useful — not just theoretical knowledge about what AI can do.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag designer">Designers</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+    <div class="module">
+      <div class="module-number">06</div>
+      <div class="module-title">Ethics, Risk & Responsible Use</div>
+      <div class="module-desc">Bias, hallucinations, data privacy, FERPA considerations, attribution norms, and how to model responsible AI use for everyone in your institution's ecosystem.</div>
+      <div class="module-tracks">
+        <span class="track-tag faculty">Faculty</span>
+        <span class="track-tag designer">Designers</span>
+        <span class="track-tag admin">Admins</span>
+        <span class="track-tag online">Online</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACKS -->
+<section class="section tracks-section">
+  <div class="section-tag">Role Tracks</div>
+  <h2 class="section-title">One workshop.<br><em>Four pathways.</em></h2>
+  <p class="section-intro">Each module includes role-specific application notes so the content lands for your actual job — not someone else's.</p>
+  <div class="tracks-grid">
+    <div class="track-card">
+      <div class="track-emoji">🎓</div>
+      <div class="track-name">Faculty Track</div>
+      <div class="track-who">For instructors across all disciplines who want practical classroom tools, policy guidance, and time-saving workflows.</div>
+    </div>
+    <div class="track-card">
+      <div class="track-emoji">🎨</div>
+      <div class="track-name">Designer Track</div>
+      <div class="track-who">For instructional and learning designers who want to integrate AI into course development and support faculty adoption.</div>
+    </div>
+    <div class="track-card">
+      <div class="track-emoji">🏛️</div>
+      <div class="track-name">Administrator Track</div>
+      <div class="track-who">For deans, chairs, and directors who need institutional strategy, policy frameworks, and faculty change management approaches.</div>
+    </div>
+    <div class="track-card">
+      <div class="track-emoji">💻</div>
+      <div class="track-name">Online Program Track</div>
+      <div class="track-who">For online program directors and staff navigating AI's specific implications for asynchronous, distance, and hybrid learning.</div>
+    </div>
+  </div>
+</section>
+
+<!-- INCLUDED -->
+<section class="section included-section">
+  <div class="section-tag">What's Included</div>
+  <h2 class="section-title">Everything you need.<br><em>Nothing you don't.</em></h2>
+  <div class="included-grid">
+    <div class="include-card">
+      <div class="include-emoji">🎬</div>
+      <h3>6 Video Modules</h3>
+      <p>Self-paced, with role-specific application notes throughout. Watch once or return whenever you need a refresher.</p>
+    </div>
+    <div class="include-card">
+      <div class="include-emoji">📋</div>
+      <h3>AI Policy Template Library</h3>
+      <p>Five syllabus policy templates ranging from fully restrictive to fully permissive, with guidance on choosing the right one for your course.</p>
+    </div>
+    <div class="include-card">
+      <div class="include-emoji">⚡</div>
+      <h3>Prompt Starter Pack</h3>
+      <p>60+ higher-ed-tested prompts organized by role — feedback drafting, learning objective writing, policy communication, course design, and more.</p>
+    </div>
+    <div class="include-card">
+      <div class="include-emoji">📖</div>
+      <h3>Participant Workbook</h3>
+      <p>A structured PDF guide to accompany each module, with reflection questions and application exercises for your specific role.</p>
+    </div>
+    <div class="include-card">
+      <div class="include-emoji">🔁</div>
+      <h3>Assessment Redesign Guide</h3>
+      <p>Practical strategies for rethinking assessments so they measure what actually matters — even when students have access to AI tools.</p>
+    </div>
+    <div class="include-card">
+      <div class="include-emoji">♾️</div>
+      <h3>Lifetime Access + Updates</h3>
+      <p>The AI landscape changes fast. Full Bundle purchasers get every future update as the course evolves with the technology.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials">
+  <div class="section-tag">What People Are Saying</div>
+  <h2 class="section-title">From people who<br><em>actually work in higher ed.</em></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="testi-text">"I've sat through three AI workshops this year. This is the first one where I left with something I could actually use the next day. The role-specific framing made all the difference."</div>
+      <div class="testi-author">Associate Professor</div>
+      <div class="testi-role">College of Engineering</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-text">"As an instructional designer, I've been frustrated by AI training that assumes I'm a faculty member. This workshop finally spoke to what I actually do — and gave me tools to help the faculty I support."</div>
+      <div class="testi-author">Senior Instructional Designer</div>
+      <div class="testi-role">Research University</div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-text">"I needed something I could share with my entire department — faculty, staff, and administrators — without having to explain why it was relevant to each group. This was it."</div>
+      <div class="testi-author">Associate Dean for Academic Affairs</div>
+      <div class="testi-role">School of Education</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section pricing-section" id="pricing">
+  <div class="section-tag">Pricing</div>
+  <h2 class="section-title">Simple, transparent pricing<br><em>for every situation.</em></h2>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="price-tier-name">Solo</div>
+      <div class="price-amount">$97</div>
+      <div class="price-sub">For individuals ready to get started</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> All 6 video modules</li>
+        <li><span class="check">✓</span> Participant workbook</li>
+        <li><span class="check">✓</span> Prompt starter pack</li>
+        <li><span class="check">✓</span> Lifetime access</li>
+      </ul>
+      <a href="https://YOUR-TEACHABLE-URL.teachable.com" class="btn-price btn-price-outline">Enroll Now</a>
+    </div>
+    <div class="price-card featured">
+      <div class="featured-label">Most Popular</div>
+      <div class="price-tier-name">Full Bundle</div>
+      <div class="price-amount">$197</div>
+      <div class="price-sub">Everything, including all templates and guides</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> All 6 video modules</li>
+        <li><span class="check">✓</span> Participant workbook</li>
+        <li><span class="check">✓</span> Prompt starter pack (60+ prompts)</li>
+        <li><span class="check">✓</span> AI policy template library</li>
+        <li><span class="check">✓</span> Assessment redesign guide</li>
+        <li><span class="check">✓</span> Lifetime access + all future updates</li>
+      </ul>
+      <a href="https://YOUR-TEACHABLE-URL.teachable.com" class="btn-price btn-price-fill">Enroll Now</a>
+    </div>
+    <div class="price-card">
+      <div class="price-tier-name">Institutional</div>
+      <div class="price-amount">$997</div>
+      <div class="price-sub">License for your department or institution</div>
+      <ul class="price-features">
+        <li><span class="check">✓</span> Everything in Full Bundle</li>
+        <li><span class="check">✓</span> Up to 25 seats</li>
+        <li><span class="check">✓</span> Facilitator guide</li>
+        <li><span class="check">✓</span> Optional custom branding</li>
+        <li><span class="check">✓</span> Live group Q&A session</li>
+        <li><span class="check">✓</span> CTL / faculty development ready</li>
+      </ul>
+      <a href="https://YOUR-TEACHABLE-URL.teachable.com" class="btn-price btn-price-outline">Contact Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section">
+  <div class="section-tag">Questions</div>
+  <h2 class="section-title">Frequently asked.</h2>
+  <div class="faq-grid">
+    <div class="faq-item">
+      <div class="faq-q">Do I need any technical background?</div>
+      <div class="faq-a">None at all. If you can use email and a browser, you're ready. The workshop is designed for people whose expertise is in education, not technology.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is this relevant to my discipline?</div>
+      <div class="faq-a">Yes — the workshop draws on examples across engineering, humanities, professional fields, and online programs. It's explicitly not built for one type of institution or discipline.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">I'm an instructional designer, not faculty. Is this for me?</div>
+      <div class="faq-a">Absolutely. The Designer Track is built specifically for IDs and learning designers, with content on rapid course development, faculty support, and AI in the design process.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">How long does it take to complete?</div>
+      <div class="faq-a">About 2.5 hours of video content total. Most participants spread it across a week, watching one or two modules at a time. There's no deadline — work at your own pace.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will this become outdated quickly?</div>
+      <div class="faq-a">The frameworks — how to evaluate tools, design policy, support adoption — are durable. Full Bundle purchasers get lifetime updates as the content evolves with the landscape.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Is there a money-back guarantee?</div>
+      <div class="faq-a">Yes. Complete the workshop and if you don't find it useful, we'll refund you within 30 days — no questions asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2>Higher ed is changing.<br>Be the one who <em>leads it.</em></h2>
+  <p>Faculty, designers, administrators, and online program staff — all equipped, all aligned, all moving forward together.</p>
+  <a href="https://YOUR-TEACHABLE-URL.teachable.com" class="btn-primary">Get Started Today</a>
+</section>
+
+<footer>
+  © 2026 · AI Literacy for Higher Education · All Rights Reserved · Built by a Higher Ed Insider
+</footer>
+
+
+<!-- FOOTER -->
+<footer style="background:#1a1f2e; padding:40px 6vw 28px;">
+  <div style="max-width:1200px; margin:0 auto; display:flex; justify-content:space-between; align-items:center; border-top:1px solid #2d3748; padding-top:28px;">
+    <span style="font-size:0.78rem; color:#475569;">© 2026 The Futureproof Studio · All rights reserved</span>
+    <div style="display:flex; gap:24px;">
+      <a href="index.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Home</a>
+      <a href="workshops.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Workshops</a>
+      <a href="contact.html" style="font-size:0.82rem; color:#64748b; text-decoration:none;">Contact</a>
+      <a href="https://futureproofstudio.co" style="font-size:0.82rem; color:#64748b; text-decoration:none;">futureproofstudio.co</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
