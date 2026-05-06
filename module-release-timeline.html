@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Course Release Timeline — AI Literacy for Higher Education</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:      #0f1923;
+    --teal:     #028090;
+    --teal-lt:  #e0f4f6;
+    --teal-dk:  #016070;
+    --gold:     #c8922a;
+    --gold-lt:  #fdf3e3;
+    --slate:    #3d5166;
+    --muted:    #6b7f8f;
+    --rule:     #dde5ec;
+    --bg:       #f6f9fb;
+    --white:    #ffffff;
+    --green:    #2a7a4f;
+    --green-lt: #e3f4ec;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 48px 24px 80px;
+  }
+
+  .page {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    text-align: center;
+    margin-bottom: 56px;
+    position: relative;
+  }
+
+  .header::before {
+    content: '';
+    display: block;
+    width: 48px;
+    height: 3px;
+    background: var(--teal);
+    margin: 0 auto 20px;
+  }
+
+  .header-eyebrow {
+    font-size: 0.7rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--teal);
+    font-weight: 500;
+    margin-bottom: 12px;
+  }
+
+  .header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 16px;
+  }
+
+  .header h1 em {
+    font-style: italic;
+    color: var(--teal);
+  }
+
+  .header-sub {
+    font-size: 0.95rem;
+    color: var(--muted);
+    line-height: 1.7;
+    max-width: 480px;
+    margin: 0 auto 24px;
+    font-weight: 300;
+  }
+
+  .available-now-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--green-lt);
+    border: 1px solid #a8dbbf;
+    color: var(--green);
+    font-size: 0.82rem;
+    font-weight: 500;
+    padding: 9px 20px;
+    letter-spacing: 0.02em;
+  }
+
+  .banner-dot {
+    width: 7px;
+    height: 7px;
+    background: var(--green);
+    border-radius: 50%;
+    animation: blink 2s ease-in-out infinite;
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* ── LEGEND ── */
+  .legend {
+    display: flex;
+    gap: 24px;
+    justify-content: center;
+    margin-bottom: 48px;
+    flex-wrap: wrap;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+  }
+
+  /* Vertical line */
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 108px;
+    top: 24px;
+    bottom: 24px;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--green) 0%, var(--green) 28%, var(--rule) 28%, var(--rule) 100%);
+  }
+
+  .timeline-item {
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 0;
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .timeline-item:last-child {
+    margin-bottom: 0;
+  }
+
+  /* ── TIME LABEL ── */
+  .time-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 24px;
+    padding-top: 20px;
+    position: relative;
+  }
+
+  .time-week {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-align: right;
+  }
+
+  .time-node {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    position: absolute;
+    right: -7px;
+    top: 22px;
+    box-shadow: 0 0 0 2px currentColor;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 20px 24px;
+    position: relative;
+    transition: box-shadow 0.2s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+  }
+
+  .card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+
+  .module-badge {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    flex-shrink: 0;
+  }
+
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--ink);
+    line-height: 1.25;
+    flex: 1;
+  }
+
+  .status-pill {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    flex-shrink: 0;
+  }
+
+  .card-desc {
+    font-size: 0.85rem;
+    color: var(--slate);
+    line-height: 1.65;
+    margin-bottom: 14px;
+    font-weight: 300;
+  }
+
+  .lessons-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+
+  .lesson-tag {
+    font-size: 0.7rem;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--rule);
+    padding: 3px 9px;
+    letter-spacing: 0.02em;
+  }
+
+  /* Available now cards */
+  .card.available::before { background: var(--green); }
+  .card.available .module-badge { background: var(--green-lt); color: var(--green); }
+  .card.available .status-pill { background: var(--green-lt); color: var(--green); }
+  .time-col.available .time-week { color: var(--green); }
+  .time-col.available .time-node { color: var(--green); background: var(--green); }
+
+  /* Upcoming cards */
+  .card.upcoming::before { background: var(--teal); }
+  .card.upcoming .module-badge { background: var(--teal-lt); color: var(--teal-dk); }
+  .card.upcoming .status-pill { background: var(--teal-lt); color: var(--teal-dk); }
+  .time-col.upcoming .time-week { color: var(--teal); }
+  .time-col.upcoming .time-node { color: var(--teal); background: var(--white); }
+
+  /* ── FOOTER NOTE ── */
+  .footer-note {
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .note-card {
+    background: var(--white);
+    border: 1px solid var(--rule);
+    padding: 18px 20px;
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+  }
+
+  .note-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .note-title {
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .note-body {
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.6;
+    font-weight: 300;
+  }
+
+  /* ── BRANDING ── */
+  .brand-footer {
+    text-align: center;
+    margin-top: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .brand-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .brand-wordmark {
+    display: flex;
+    flex-direction: column;
+    line-height: 1;
+    gap: 2px;
+  }
+
+  .brand-the {
+    font-size: 6px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  .brand-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 12px;
+    color: var(--ink);
+  }
+
+  .brand-divider {
+    width: 1px;
+    height: 24px;
+    background: var(--rule);
+  }
+
+  .brand-url {
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.04em;
+    text-decoration: none;
+  }
+
+  /* Print / export */
+  @media print {
+    body { background: white; padding: 24px; }
+    .card:hover { box-shadow: none; }
+  }
+
+  @media (max-width: 600px) {
+    .timeline::before { left: 72px; }
+    .timeline-item { grid-template-columns: 72px 1fr; }
+    .time-col { padding-right: 18px; }
+    .time-node { right: -7px; }
+    .footer-note { grid-template-columns: 1fr; }
+    .card-top { flex-wrap: wrap; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-eyebrow">AI Literacy for Higher Education</div>
+    <h1>Your learning journey —<br><em>module by module.</em></h1>
+    <p class="header-sub">New modules are released every two weeks so you can apply what you've learned before the next one arrives. All modules remain accessible for the lifetime of your enrolment.</p>
+    <div class="available-now-banner">
+      <div class="banner-dot"></div>
+      Modules 1 and 2 are live — start learning today
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item">
+      <div class="legend-dot" style="background: var(--green);"></div>
+      Available now
+    </div>
+    <div class="legend-item">
+      <div class="legend-dot" style="background: var(--teal);"></div>
+      Coming soon — fortnightly release
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="timeline">
+
+    <!-- MODULE 1 -->
+    <div class="timeline-item">
+      <div class="time-col available">
+        <div class="time-week">Available<br>now</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card available">
+        <div class="card-top">
+          <span class="module-badge">Module 1</span>
+          <div class="card-title">Understanding AI &amp; the Tool Landscape</div>
+          <span class="status-pill">✓ Live</span>
+        </div>
+        <p class="card-desc">What AI actually is, how large language models work, what they reliably get right and wrong, and a practical introduction to the four tools you'll use throughout this course.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">1.1 What is AI?</span>
+          <span class="lesson-tag">1.2 How LLMs work</span>
+          <span class="lesson-tag">1.3 Capabilities &amp; limits</span>
+          <span class="lesson-tag">1.4 Tool landscape overview</span>
+          <span class="lesson-tag">1.5 Knowledge check</span>
+          <span class="lesson-tag">1.6 Resources</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 2 -->
+    <div class="timeline-item">
+      <div class="time-col available">
+        <div class="time-week">Available<br>now</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card available">
+        <div class="card-top">
+          <span class="module-badge">Module 2</span>
+          <div class="card-title">Tools in Depth &amp; Live Demonstrations</div>
+          <span class="status-pill">✓ Live</span>
+        </div>
+        <p class="card-desc">Deep dives into ChatGPT, Claude, Perplexity, and NotebookLM. The four-element prompting framework. Live demonstrations of two real tasks across all four tools — so you can see the differences yourself.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">2.1 Evaluation framework</span>
+          <span class="lesson-tag">2.2–2.5 Tool deep dives</span>
+          <span class="lesson-tag">2.6 Which tool, which task</span>
+          <span class="lesson-tag">2.7 Data privacy</span>
+          <span class="lesson-tag">2.8 Prompting fundamentals</span>
+          <span class="lesson-tag">2.9–2.10 Live demos</span>
+          <span class="lesson-tag">2.11 Guided practice</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 3 -->
+    <div class="timeline-item">
+      <div class="time-col upcoming">
+        <div class="time-week">Week<br>3</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card upcoming">
+        <div class="card-top">
+          <span class="module-badge">Module 3</span>
+          <div class="card-title">AI for Your Role, Practically</div>
+          <span class="status-pill">Coming soon</span>
+        </div>
+        <p class="card-desc">Role-specific workflows for faculty, instructional designers, administrators, and online program staff. Real time-saving applications for your actual daily tasks — not generic examples.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">3.1 For faculty</span>
+          <span class="lesson-tag">3.2 For designers</span>
+          <span class="lesson-tag">3.3 For administrators</span>
+          <span class="lesson-tag">3.4 For online programs</span>
+          <span class="lesson-tag">3.5 Your personal AI workflow</span>
+          <span class="lesson-tag">3.6 Common mistakes</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 4 -->
+    <div class="timeline-item">
+      <div class="time-col upcoming">
+        <div class="time-week">Week<br>5</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card upcoming">
+        <div class="card-top">
+          <span class="module-badge">Module 4</span>
+          <div class="card-title">Academic Integrity in the AI Era</div>
+          <span class="status-pill">Coming soon</span>
+        </div>
+        <p class="card-desc">How to write a policy that actually works. AI-resilient assessment design. The honest truth about detection tools. And how to have productive conversations with students about AI.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">4.1 Why old frameworks fail</span>
+          <span class="lesson-tag">4.2 Writing a working policy</span>
+          <span class="lesson-tag">4.3 AI-resilient assessments</span>
+          <span class="lesson-tag">4.4 Detection tools — the truth</span>
+          <span class="lesson-tag">4.5 Student conversations</span>
+          <span class="lesson-tag">4.6 Institutional policy</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 5 -->
+    <div class="timeline-item">
+      <div class="time-col upcoming">
+        <div class="time-week">Week<br>7</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card upcoming">
+        <div class="card-top">
+          <span class="module-badge">Module 5</span>
+          <div class="card-title">Hands-On Practice</div>
+          <span class="status-pill">Coming soon</span>
+        </div>
+        <p class="card-desc">The complete AI workflow from prompt to polished output. Guided practice sessions for writing, curriculum design, and research tasks. Building sustainable AI habits that actually stick.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">5.1 The complete workflow</span>
+          <span class="lesson-tag">5.2 Practice: writing &amp; comms</span>
+          <span class="lesson-tag">5.3 Practice: course design</span>
+          <span class="lesson-tag">5.4 Practice: research &amp; synthesis</span>
+          <span class="lesson-tag">5.5 Evaluating output</span>
+          <span class="lesson-tag">5.6 Sustainable habits</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODULE 6 -->
+    <div class="timeline-item">
+      <div class="time-col upcoming">
+        <div class="time-week">Week<br>9</div>
+        <div class="time-node"></div>
+      </div>
+      <div class="card upcoming">
+        <div class="card-top">
+          <span class="module-badge">Module 6</span>
+          <div class="card-title">Ethics, Risk &amp; Responsible Use</div>
+          <span class="status-pill">Coming soon</span>
+        </div>
+        <p class="card-desc">Bias and equity in AI. Data privacy at an institutional level. Attribution and transparency norms. How to model responsible use for students and colleagues — and a durable framework for navigating what comes next.</p>
+        <div class="lessons-grid">
+          <span class="lesson-tag">6.1 Bias in AI</span>
+          <span class="lesson-tag">6.2 Data privacy &amp; FERPA</span>
+          <span class="lesson-tag">6.3 Attribution norms</span>
+          <span class="lesson-tag">6.4 AI and equity</span>
+          <span class="lesson-tag">6.5 Modelling responsible use</span>
+          <span class="lesson-tag">6.6 A framework for what's next</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER NOTES -->
+  <div class="footer-note">
+    <div class="note-card">
+      <div class="note-icon">📬</div>
+      <div>
+        <div class="note-title">You'll be notified</div>
+        <div class="note-body">You'll receive an email when each new module goes live — no need to check back manually.</div>
+      </div>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">♾️</div>
+      <div>
+        <div class="note-title">Lifetime access</div>
+        <div class="note-body">All modules stay accessible for the lifetime of your enrolment. No deadline, no pressure — work at your own pace.</div>
+      </div>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">🔄</div>
+      <div>
+        <div class="note-title">Future updates included</div>
+        <div class="note-body">Full Bundle members receive all future course updates as the AI landscape evolves — at no extra cost.</div>
+      </div>
+    </div>
+    <div class="note-card">
+      <div class="note-icon">❓</div>
+      <div>
+        <div class="note-title">Questions?</div>
+        <div class="note-body">Email us at <a href="mailto:hello@futureproofstudio.co" style="color: var(--teal); text-decoration:none;">hello@futureproofstudio.co</a> — we respond within 24 hours.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BRAND FOOTER -->
+  <div class="brand-footer">
+    <div class="brand-logo">
+      <svg width="28" height="28" viewBox="0 0 44 44" fill="none">
+        <circle cx="22" cy="22" r="22" fill="#e0f4f6"/>
+        <rect x="10" y="14" width="14" height="2.5" rx="1.25" fill="#028090"/>
+        <rect x="10" y="19.5" width="20" height="2.5" rx="1.25" fill="#028090"/>
+        <rect x="10" y="25" width="16" height="2.5" rx="1.25" fill="#028090"/>
+        <path d="M28 15.5 L35 22 L28 28.5" stroke="#028090" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+      </svg>
+      <div class="brand-wordmark">
+        <span class="brand-the">The</span>
+        <span class="brand-name">Futureproof Studio</span>
+      </div>
+    </div>
+    <div class="brand-divider"></div>
+    <a href="https://futureproofstudio.co" class="brand-url">futureproofstudio.co</a>
+  </div>
+
+</div>
+</body>
+</html>
